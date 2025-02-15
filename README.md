@@ -38,7 +38,14 @@ sed -i 's/Save and see your changes instantly./Hello, World!/' hello-world/src/a
 
 cd hello-world
 npm run dev
+```
 
+- Dockerizar
+
+```bash
+# https://github.com/vercel/next.js/tree/canary/examples/with-docker
+
+# ...
 ```
 
 
