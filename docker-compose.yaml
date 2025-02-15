@@ -1,7 +1,8 @@
 
 services:
+
   app:
-    build: hello-world
+    build: notion-clone
     ports:
       - 3000:3000
     restart: on-failure

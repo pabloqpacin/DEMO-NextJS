@@ -48,4 +48,16 @@ npm run dev
 # ...
 ```
 
+- Eliminar `hello-world`, vamos a empezar un proyecto en condiciones
+
+```sh
+git rm -r hello-world
+```
+
+
+## [Notion Clone](https://www.youtube.com/watch?v=0OaDyjB9Ib8)
+
+
+> [./notion-clone.md](/notion-clone.md)
+
 
