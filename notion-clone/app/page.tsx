@@ -16,6 +16,12 @@ export default function Home() {
       <Button variant="secondary">
         It's not!
       </Button>
+      <Button variant="purple">
+        Aye!
+      </Button>
+      <Button className="text-white bg-emerald-500">
+        Aye!
+      </Button>
     </div>
   );
 }
