@@ -61,3 +61,10 @@ git rm -r hello-world
 > [./notion-clone.md](/notion-clone.md)
 
 
+<!-- ```sh
+npm root
+  # /home/pabloqpacin/repos/DEMO-NextJS/node_modules
+npm root -g
+  # /home/pabloqpacin/.nvm/versions/node/v23.7.0/lib/node_modules
+``` -->
+

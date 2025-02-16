@@ -138,6 +138,14 @@ export default TestPage;
 - crear `_components/{footer,logo}.tsx`
 - crear `navbar.tsx` y `(marketing)/layout.tsx` para aplicarla
   - NOTA: creamos `hooks/use-scroll-top.ts` para que la navbar se mantenga siempre arriba, mediante [useState](https://react.dev/reference/react/useState) y [useEffect](https://react.dev/reference/react/useEffect) de React
+- crear `components/providers/theme-provider.tsx` y `components/mode-toggle.tsx` y modificar el `app/layout.tsx` para implementar modos claro/oscuro [según Shadcn](https://ui.shadcn.com/docs/dark-mode)
 
+```sh
+# cd notion-clone
+npm install next-themes
+
+npx shadcn@latest add dropdown-menu
+  # --legacy-peer-deps
+```
 
 
