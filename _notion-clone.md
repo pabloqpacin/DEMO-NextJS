@@ -128,4 +128,10 @@ export default TestPage;
 - Descargar SVG logos ([svgrepo.com](https://www.svgrepo.com/svg/396901/letter-j)) en `app/public`
 - Editar `app/layout.tsx`: `metadata` para cambiar el nombre e icono de la tab en el navegador
   - NOTA: when things are in the `public` folder, you don't have to write `public` on the `href` as they are automatically under the `/`
+\
+- crear `(marketing)/_components/`
+  - NOTA: el `components` principal lo reservamos para componentes REUSABLE como botones, dialogs, models...
+- crear `/_components/heading.tsx`
+  - NO *server* component sino *client* por cuestión de las actions del os buttons...
+\
 
