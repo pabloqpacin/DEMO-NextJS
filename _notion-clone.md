@@ -77,9 +77,21 @@ ls components/ui/button.tsx
 vi app/page.tsx
 ```
 
+## Trunk Code Quality Extension
 
+1. about
+   - [Marketplace](https://marketplace.visualstudio.com/items?itemName=Trunk.io)
+   - [Documentation](https://docs.trunk.io/code-quality/ide-integration/vscode)
 
+2. instalar extensión
+   - RESPONDER SÍ: *Do you trust the publisher "trunk"? The extension Trunk Code Quality is published by trunk. This is the first extension you're installing from this publisher. trunk is not verified. VSCodium has no control over the behavior of third-party extensions, including how they manage your personal data. Proceed only if you trust the publisher.*
+   - Se abre una terminal con info sobre los linters
+   - Se crea `.trunk/trunk.yaml`
+   - [ ] Login via GitHub?
+   - [ ] GH Actions?
 
+3. usar activamente
+   - VSC Command (Ctrl+Shift+P)> Format Document With > Trunk Code Quality (default)
 
 
 
