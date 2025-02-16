@@ -77,9 +77,79 @@ ls components/ui/button.tsx
 vi app/page.tsx
 ```
 
+## Trunk Code Quality Extension
+
+1. about
+   - [Marketplace](https://marketplace.visualstudio.com/items?itemName=Trunk.io)
+   - [Documentation](https://docs.trunk.io/code-quality/ide-integration/vscode)
+
+2. instalar extensión
+   - RESPONDER SÍ: *Do you trust the publisher "trunk"? The extension Trunk Code Quality is published by trunk. This is the first extension you're installing from this publisher. trunk is not verified. VSCodium has no control over the behavior of third-party extensions, including how they manage your personal data. Proceed only if you trust the publisher.*
+   - Se abre una terminal con info sobre los linters
+   - Se crea `.trunk/trunk.yaml`
+   - [ ] Login via GitHub?
+   - [ ] GH Actions?
+
+3. usar activamente
+   - VSC Command (Ctrl+Shift+P)> Format Document With > Trunk Code Quality (default)
 
 
+## Routing groups
 
+- `app/test`
+  - creamos `app/test/page.tsx`
+
+```ts
+const TestPage = () => {
+  return <div>Hello Test Page</div>;
+};
+
+export default TestPage;
+```
+
+- - abrimos `localhost:3000/test` en el navegador y vemos que se carga la página, es decir hay enrutamiento
+- - esto no lo queremos, y para evitarlo habría que renombrar el directorio como `_test` (ASÍ SE ELIMINA LA ROUTE Y SU CONTENIDO)
+- `app/(root)`
+  - creamos `app/(root)` y movemos ahí el `app/page.tsx`
+  - abrimos `localhost:3000/` y se carga normal!
+  - IMPORTANTE: es útil para que X Layouts afecten solo a las pages de este grupo
+- `app/(auth)/(routes)/{login,register}/page.tsx`
+  - creamos estos directorios y archivos
+  - en el navegador vemos que se cargan en `localhost:3000/{login,register}`
+  - CARPETAS CON PARÉNTESIS NOT PART OF THE URL UNTIL REACH A NORMAL FOLDER NAME, SOLO ORGANIZATIONAL
+- `app/(auth)/layout.tsx`
+  - lo creamos y comprobamos que se aplica solo a `localhost:3000/{login,register}`
+
+## Landing Page
+
+### 1. (marketing)
+
+- Tweak `app/globals.css` (`html,body,:root {height: 100%;}`)
+- Descargar SVG logos ([svgrepo.com](https://www.svgrepo.com/svg/396901/letter-j)) en `app/public`
+- Editar `app/layout.tsx`: `metadata` para cambiar el nombre e icono de la tab en el navegador
+  - NOTA: when things are in the `public` folder, you don't have to write `public` on the `href` as they are automatically under the `/`
+\
+- crear `(marketing)/_components/`
+  - NOTA: el `components` principal lo reservamos para componentes REUSABLE como botones, dialogs, models...
+- crear `/_components/heading.tsx`
+  - NO *server* component sino *client* por cuestión de las actions del os buttons...
+\
+- crear `/_components/heroes.tsx`, y disponibilizar unas imágenes [Open Doodles by Pablo Stanley](https://blush.design/collections/L9oIBvB7R7IjzZWxOfIu/open-doodles/doodles-reflecting/lFDp6aPiG?bg=f9f5f6) en `public`
+- crear `_components/{footer,logo}.tsx`
+- crear `navbar.tsx` y `(marketing)/layout.tsx` para aplicarla
+  - NOTA: creamos `hooks/use-scroll-top.ts` para que la navbar se mantenga siempre arriba, mediante [useState](https://react.dev/reference/react/useState) y [useEffect](https://react.dev/reference/react/useEffect) de React
+- crear `components/providers/theme-provider.tsx` y `components/mode-toggle.tsx` y modificar el `app/layout.tsx` para implementar modos claro/oscuro [según Shadcn](https://ui.shadcn.com/docs/dark-mode)
+
+```sh
+# cd notion-clone
+npm install next-themes
+
+npx shadcn@latest add dropdown-menu
+  # --legacy-peer-deps
+```
+- Últimos arreglos para la **Landing Page** (integración modos claro/oscuro)
+  - componentes **logo** y **heroes**: para cada elemento tendremos una versión clara y otra oscura, y en el código tendremos dos `<Image />`s: la primera con `className="dark:hidden"` y la segunda con `className="hidden dark:block"`
+  - componentes **navbar** y **footer**: añadimos `dark:bg-[#1F1F1F]` para mejorar el modo oscuro
 
 
 
