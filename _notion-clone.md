@@ -136,7 +136,8 @@ export default TestPage;
 \
 - crear `/_components/heroes.tsx`, y disponibilizar unas imágenes [Open Doodles by Pablo Stanley](https://blush.design/collections/L9oIBvB7R7IjzZWxOfIu/open-doodles/doodles-reflecting/lFDp6aPiG?bg=f9f5f6) en `public`
 - crear `_components/{footer,logo}.tsx`
-
+- crear `navbar.tsx` y `(marketing)/layout.tsx` para aplicarla
+  - NOTA: creamos `hooks/use-scroll-top.ts` para que la navbar se mantenga siempre arriba, mediante [useState](https://react.dev/reference/react/useState) y [useEffect](https://react.dev/reference/react/useEffect) de React
 
 
 
