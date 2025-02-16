@@ -134,4 +134,5 @@ export default TestPage;
 - crear `/_components/heading.tsx`
   - NO *server* component sino *client* por cuestión de las actions del os buttons...
 \
+- crear `/_components/heroes.tsx`, y disponibilizar unas imágenes [Open Doodles by Pablo Stanley](https://blush.design/collections/L9oIBvB7R7IjzZWxOfIu/open-doodles/doodles-reflecting/lFDp6aPiG?bg=f9f5f6) en `public`
 
