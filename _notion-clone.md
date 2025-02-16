@@ -31,12 +31,7 @@ vi docker-compose.yaml
 
 - Implantar [shadcn-ui](https://ui.shadcn.com/)
 
-
 ```sh
-# Bajamos una versión de React para compatibilidad con Shadcn
-npm install react@19 react-dom@19 @types/react@19 @types/react-dom@19
-
-
 cd notion-clone
 npx shadcn@latest init
   # Need to install the following packages:
@@ -51,6 +46,40 @@ npx shadcn@latest init
   # Some packages may fail to install due to peer dependency issues in npm (see https://ui.shadcn.com/react-19).
   # ? How to proceed? Use --legacy-peer-deps
 ```
+
+
+## Cambios
+
+> [!NOTE]
+> - Layouts: groupfiles reflecting every single route and component; not meant for rendering, more like a **reusable layout like a sidebar or a navigation bar**
+> - Pages: forms for users etc.
+
+<!-- - `app/layout.tsx`: -->
+
+- Limpiar boilerplate de `app/page.tsx`
+
+```ts
+export default function Home() {
+  return (
+    // Eliminar boilerplate, crear buttons!
+  );
+}
+```
+
+- añadir `button` de Shadcn
+
+```sh
+npx shadcn@latest add button
+  # --legacy-peer-deps
+
+ls components/ui/button.tsx
+
+vi app/page.tsx
+```
+
+
+
+
 
 
 
