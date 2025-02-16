@@ -147,5 +147,9 @@ npm install next-themes
 npx shadcn@latest add dropdown-menu
   # --legacy-peer-deps
 ```
+- Últimos arreglos para la **Landing Page** (integración modos claro/oscuro)
+  - componentes **logo** y **heroes**: para cada elemento tendremos una versión clara y otra oscura, y en el código tendremos dos `<Image />`s: la primera con `className="dark:hidden"` y la segunda con `className="hidden dark:block"`
+  - componentes **navbar** y **footer**: añadimos `dark:bg-[#1F1F1F]` para mejorar el modo oscuro
+
 
 
