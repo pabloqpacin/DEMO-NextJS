@@ -120,3 +120,12 @@ export default TestPage;
 - `app/(auth)/layout.tsx`
   - lo creamos y comprobamos que se aplica solo a `localhost:3000/{login,register}`
 
+## Landing Page
+
+### 1. (marketing)
+
+- Tweak `app/globals.css` (`html,body,:root {height: 100%;}`)
+- Descargar SVG logos ([svgrepo.com](https://www.svgrepo.com/svg/396901/letter-j)) en `app/public`
+- Editar `app/layout.tsx`: `metadata` para cambiar el nombre e icono de la tab en el navegador
+  - NOTA: when things are in the `public` folder, you don't have to write `public` on the `href` as they are automatically under the `/`
+
