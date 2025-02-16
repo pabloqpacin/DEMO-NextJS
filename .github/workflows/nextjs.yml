@@ -30,8 +30,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Change working directory
+        run: cd notion-clone
+
       - name: Detect package manager
         id: detect-package-manager
         run: |
