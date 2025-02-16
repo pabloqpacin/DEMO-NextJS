@@ -2,5 +2,6 @@
     "recommendations": [
         "bradlc.vscode-tailwindcss",
         "trunk.io"
+        // "burkeholland.simple-react-snippets"
     ]
 }

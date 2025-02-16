@@ -94,4 +94,29 @@ vi app/page.tsx
    - VSC Command (Ctrl+Shift+P)> Format Document With > Trunk Code Quality (default)
 
 
+## Routing groups
+
+- `app/test`
+  - creamos `app/test/page.tsx`
+
+```ts
+const TestPage = () => {
+  return <div>Hello Test Page</div>;
+};
+
+export default TestPage;
+```
+
+- - abrimos `localhost:3000/test` en el navegador y vemos que se carga la página, es decir hay enrutamiento
+- - esto no lo queremos, y para evitarlo habría que renombrar el directorio como `_test` (ASÍ SE ELIMINA LA ROUTE Y SU CONTENIDO)
+- `app/(root)`
+  - creamos `app/(root)` y movemos ahí el `app/page.tsx`
+  - abrimos `localhost:3000/` y se carga normal!
+  - IMPORTANTE: es útil para que X Layouts afecten solo a las pages de este grupo
+- `app/(auth)/(routes)/{login,register}/page.tsx`
+  - creamos estos directorios y archivos
+  - en el navegador vemos que se cargan en `localhost:3000/{login,register}`
+  - CARPETAS CON PARÉNTESIS NOT PART OF THE URL UNTIL REACH A NORMAL FOLDER NAME, SOLO ORGANIZATIONAL
+- `app/(auth)/layout.tsx`
+  - lo creamos y comprobamos que se aplica solo a `localhost:3000/{login,register}`
 
