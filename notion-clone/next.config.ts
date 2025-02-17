@@ -8,7 +8,8 @@ const nextConfig: NextConfig = {
 module.exports = {
   // ... rest of the configuration.
   // output: "standalone",     // Docker
-  output: "export",     // GH Actions
+  // output: "export",     // GH Actions
+  output: process.env.NEXT_BUILD_MODE === 'gh-actions' ? 'export' : 'standalone',
 };
 
 export default nextConfig;
