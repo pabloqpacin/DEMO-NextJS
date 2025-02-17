@@ -7,7 +7,8 @@ const nextConfig: NextConfig = {
 // https://github.com/vercel/next.js/tree/canary/examples/with-docker
 module.exports = {
   // ... rest of the configuration.
-  output: "standalone",
+  // output: "standalone",     // Docker
+  output: "export",     // GH Actions
 };
 
 export default nextConfig;
